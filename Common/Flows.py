@@ -105,3 +105,8 @@ class _Flows:
                 for flow in each[1]:
                     self.flow_data_set[temp_time - 1][1].append(flow)
                 temp_time += time_pine
+    
+    def Init_flows(self):
+        for ele_flow in self.flows:
+            ele_flow.flowInfo.setRealSendNum(0)
+

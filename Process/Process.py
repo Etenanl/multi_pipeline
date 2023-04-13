@@ -8,9 +8,9 @@ csv文件中，每一个flow对应两行，第一行为sketch模拟的值，第�
 """
 import csv
 import os
-from ARE import get_ARE
-from WMRE import get_WMRE
-from F1Score import get_F1Score
+from Process.ARE import get_ARE
+from Process.WMRE import get_WMRE
+from Process.F1Score import get_F1Score
 
 '''
 计算前使用initialize初始化数据结构
@@ -27,7 +27,6 @@ class _Process:
             #以.csv结尾，其他特殊情况之后考虑
             if not file.endswith(".csv"):
                 continue
-
             with open(inputPath + os.sep + file, "r") as fin:
                 while True:
                     estimated_line = fin.readline().strip()

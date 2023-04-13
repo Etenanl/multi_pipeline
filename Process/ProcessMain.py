@@ -1,9 +1,9 @@
 import os
 import csv
-from Process import _Process
+from Process.Process import _Process
 class _ProcessMain:
 
-    def __init__(self,result_dir = "..\\Source\\Result",analyze_dir = "..\\Source\\Analyze"):
+    def __init__(self,result_dir = ".\\Source\\Result",analyze_dir = ".\\Source\\Analyze"):
         self.result_dir = result_dir
         self.analyze_dir = analyze_dir
         p = _Process()
@@ -25,7 +25,7 @@ class _ProcessMain:
         p.initialize(input_ab_dir)
 
         whole_result[-1].append(p.write_ARE(output_ab_dir + os.sep + "ARE.txt"))
-        whole_result[-1].append(p.write_F1Score(output_ab_dir + os.sep + "F2.txt",0.1))
+        whole_result[-1].append(p.write_F1Score(output_ab_dir + os.sep + "F1.txt",0.1))
         whole_result[-1].append(p.write_WMRE(output_ab_dir + os.sep + "WMRE.txt"))
         with open(self.analyze_dir+"\\result.csv","w") as file:
             writer = csv.writer(file)
@@ -35,6 +35,6 @@ class _ProcessMain:
 if __name__ == '__main__':
 
 
-    result_dir = "..\\110"
-    analyze_dir = "..\\110"
-    process10 = _ProcessMain(result_dir, analyze_dir)
+    #result_dir = "..\\110"  # 路径问题result_dir = ".\\110"
+    #analyze_dir = "..\\110" # 路径问题analyze_dir = ".\\110"
+    process10 = _ProcessMain()
